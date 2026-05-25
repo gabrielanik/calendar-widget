@@ -41,18 +41,53 @@ function buildCalendar() {
   }
   
   buildCalendar();
+
+  (function () {
+
+    function setTheme() {
+        try {
+            const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        
+            const app = document.querySelector('.app');
+            if (app) {
+                app.style.background = isDark ? '#2f2f2f' : '#c7c7c7';
+            }
+
+            const header = document.querySelector('.header');
+            if (header) {
+                header.style.color = isDark ? '#ffffff' : '#000000';
+            }
+        
+            const weekdays = document.querySelector('.weekdays');
+            if (weekdays) {
+                weekdays.style.background = isDark ? '#242424' : '#b0b0b0';
+                weekdays.style.color = isDark ? '#c4c4c4' : '#2E2D2D';
+            }
+        
+            const dayElements = document.querySelectorAll('.day');
+            dayElements.forEach(day => {
+            day.style.color = isDark ? '#ffffff': '#000000';
+            });
+
+            const today = document.querySelector('.today');
+            if (today) {
+                today.style.background = isDark ? '#A0A0A0' : '#8C8B8B';
+                today.style.color = isDark ?  '#000000' : '#ffffff';
+            }
+
+            document.body.style.background = isDark ? '#191919' : '#ffffff';
+
+        } catch(e) { 
+            document.body.style.background = '#ffffff'; 
+        }
+    }
   
-  (function(){
-    function setBodyBackground(){
-      try{
-        const isDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        document.body.style.background = isDark ? '#191919' : '#ffffff';
-      } catch(e) {
-        document.body.style.background = '#ffffff';
-      }
+    // listen for theme change
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)')
+        .addEventListener('change', setTheme);
     }
-    if(window.matchMedia){
-      window.matchMedia('(prefers-color-scheme: dark)').addListener(setBodyBackground);
-    }
-    setBodyBackground();
+  
+    setTheme();
+  
   })();
