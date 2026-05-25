@@ -50,7 +50,7 @@ function buildCalendar() {
         
             const app = document.querySelector('.app');
             if (app) {
-                app.style.background = isDark ? '#2f2f2f' : '#c7c7c7';
+                app.style.background = isDark ? '#2f2f2f' : '#CECECE';
             }
 
             const header = document.querySelector('.header');
@@ -77,7 +77,16 @@ function buildCalendar() {
 
             document.body.style.background = isDark ? '#191919' : '#ffffff';
 
-        } catch(e) { 
+        } catch(e) {
+            app.style.background = '#c7c7c7';
+            header.style.color = '#000000';
+            weekdays.style.background = '#b0b0b0';
+            weekdays.style.color = '#2E2D2D';
+            dayElements.forEach(day => {
+                day.style.color = '#000000';
+                });
+            today.style.background = '#8C8B8B';
+            today.style.color = '#ffffff'; 
             document.body.style.background = '#ffffff'; 
         }
     }
