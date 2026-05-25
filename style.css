@@ -1,16 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    padding: 0;
-    height: auto;
-    background: transparent;
-  }
-  
-  .container {
-    width: 100%;
-    max-width: 200px;
-    background: rgb(59, 59, 59);
-    border-radius: 8px;
+    background: rgb(59, 59, 59); /* moved from container */
     padding: 10px;
   }
   
@@ -30,6 +21,8 @@ body {
     background-color: rgb(54, 53, 53);
     text-align: center;
     margin-bottom: 5px;
+    border-radius: 4px;
+    padding: 4px 0;
   }
   
   .days {
@@ -40,7 +33,7 @@ body {
   
   .day {
     width: 100%;
-    aspect-ratio: 1 / 1 ;
+    aspect-ratio: 1 / 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -54,13 +47,13 @@ body {
     background: transparent;
   }
   
+  .normal {
+    background: rgb(59, 59, 59);
+  }
+  
   .today {
     background: rgb(204, 204, 204);
     color: rgb(68, 68, 68);
     font-weight: bold;
     font-size: 12px;
-  }
-  
-  .normal {
-    background: rgb(59, 59, 59);
   }
