@@ -50,7 +50,7 @@ function buildCalendar() {
         
             const app = document.querySelector('.app');
             if (app) {
-                app.style.background = isDark ? '#2f2f2f' : '#E2E2E2';
+                app.style.background = isDark ? '#2f2f2f' : '#E9E9E9';
             }
 
             const header = document.querySelector('.header');
