@@ -60,7 +60,7 @@ function buildCalendar() {
         
             const weekdays = document.querySelector('.weekdays');
             if (weekdays) {
-                weekdays.style.background = isDark ? '#242424' : '#C3C3C3';
+                weekdays.style.background = isDark ? '#242424' : '#CCCCCC';
                 weekdays.style.color = isDark ? '#c4c4c4' : '#2E2D2D';
             }
         
@@ -71,7 +71,7 @@ function buildCalendar() {
 
             const today = document.querySelector('.today');
             if (today) {
-                today.style.background = isDark ? '#A0A0A0' : '#C3C3C3';
+                today.style.background = isDark ? '#A0A0A0' : '#CCCCCC';
             }
 
             document.body.style.background = isDark ? '#191919' : '#ffffff';
